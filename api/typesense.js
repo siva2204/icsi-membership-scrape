@@ -82,7 +82,7 @@ const init = async () => {
 
     let documents = [];
 
-    const data = require("../scraper/fcs-data.json");
+    let data = require("../scraper/fcs-data.json");
 
     for (let i = 0; i < data.length; i++) {
       documents.push({
@@ -98,31 +98,31 @@ const init = async () => {
       });
     }
 
-    const result = await typesense
+    let result = await typesense
       .collections("fcs")
       .documents()
       .import(documents);
 
-    console.log(result);
+    documents = [];
+    data = require("../scraper/acs-data.json");
 
-    // documents = [];
-    // data = require("../scraper/acs-data.json");
+    for (let i = 0; i < data.length; i++) {
+      documents.push({
+        name: data[i][1],
+        organization: data[i][2],
+        designation: data[i][3],
+        membershipNumber: data[i][4],
+        cpNumber: data[i][5],
+        address: data[i][6],
+        city: data[i][7],
+        email: data[i][8],
+        mobile: data[i][9],
+      });
+    }
 
-    // for (let i = 0; i < data.length; i++) {
-    //   documents.push({
-    //     name: data[i][1],
-    //     organization: data[i][2],
-    //     designation: data[i][3],
-    //     membershipNumber: data[i][4],
-    //     cpNumber: data[i][5],
-    //     address: data[i][6],
-    //     city: data[i][7],
-    //     email: data[i][8],
-    //     mobile: data[i][9],
-    //   });
-    // }
+    result = await typesense.collections("acs").documents().import(documents);
 
-    // result = await typesense.collections("acs").documents().import(documents);
+    console.log("data successfully indexed");
   } catch (error) {
     console.log(error);
     console.log("error importing data");
