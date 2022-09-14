@@ -39,6 +39,8 @@ node api/index.js
 
 #### API
 
+- [postman collection](https://www.getpostman.com/collections/67151104619cf0707203)
+
 api post request takes one or more of following field and query the list of data.
 - type
 - name
