@@ -15,7 +15,7 @@ Used [puppeteer](https://github.com/puppeteer/puppeteer), for scraping data from
 
 #### ACS list
 - ACS list has 47101 records (retrived 9700 records as of now)
-- [file](scraper/acs/)
+- [file](scraper/acs-data.json)
 - **since the service is slow and crashing at a time, scraping this much data is taking time, and this site has some logical bugs in ACS pagination logic**
 
 #### indexing
