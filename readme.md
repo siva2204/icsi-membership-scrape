@@ -14,9 +14,10 @@ Used [puppeteer](https://github.com/puppeteer/puppeteer), for scraping data from
 - [file](scraper/fcs-data.json)
 
 #### ACS list
-- ACS list has 47101 records (retrived 9700 records as of now)
+- ACS list has 47101 records (retrived 10000 records as of now)
 - [file](scraper/acs-data.json)
-- **since the service is slow and crashing at a time, scraping this much data is taking time, and this site has some logical bugs in ACS pagination logic**
+
+**since the service is slow and crashing at a time, scraping this much data is taking time, and this site has some logical bugs in ACS pagination logic**
 
 #### indexing
 [typesense](https://typesense.org/) is opensource, lighting fast memory database.
